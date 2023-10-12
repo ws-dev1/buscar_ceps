@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'styles/main.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="base">
+        <div id="base2">
+            <form action="{% url 'buscar' %}">
+                <h2>Buscar sep</h2>
+                <input id="buscar_input" type="text"  name="buscar" placeholder="digite o cep">
+                <button type="submit">
+                    pesquisar
+                </button>
+            </form>
+            {% if dados %}
+            
+            {% endif %}
+        </div>
+        
+    </div>
+    <div id="info">
+        <p>cep: {{ dados.cep }}</p>
+        <p>Logradouro: {{ dados.logradouro }}</p>
+        <p>complemento: {{ dados.complemento }}</p>
+        <p>bairro: {{ dados.bairro }}</p>
+        <p>localidade: {{ dados.localidade }}</p>
+        <p>uf: {{ dados.uf }}</p>
+        <p>ddd: {{ dados.ddd }}</p>
+    </div>
+    
+    
+    
+</body>
+</html>
